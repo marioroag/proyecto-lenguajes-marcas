@@ -1,5 +1,5 @@
 /* =========================
-   ESTILOS GENERALES
+    ESTILOS GENERALES
    ========================= */
 
 * {
@@ -19,26 +19,55 @@ body {
 }
 
 /* =========================
-   HEADER / MENU
+    HEADER / MENU
    ========================= */
 
-.site-header {
-  background: #222;
-  color: white;
-  padding: 15px;
-
+.brand {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.site-nav a {
+.brand__logo {
+  width: 20rem;
+}
+
+.site-header {
+  background-image: url("../media/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  padding-block: 7rem;
+  padding-inline: 2rem;
+  border-bottom: 0.5rem solid rgb(15, 101, 35);
+
+}
+
+.site-nav {
   color: white;
   margin-left: 15px;
   text-decoration: none;
 }
 
+.site-nav a {
+  color: white;
+  text-shadow: 1px 1px 4px black;
+
+  background-image: url("../media/portal.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 4rem 50px;
+
+  text-decoration: none;
+}
+
+
+
 /* =========================
-   INDEX (tarjetas)
+    INDEX (tarjetas)
    ========================= */
 
 .grid {
@@ -72,7 +101,7 @@ body {
 }
 
 /* =========================
-   DETALLE
+    DETALLE
    ========================= */
 
 .detail img {
@@ -89,7 +118,7 @@ body {
 }
 
 /* =========================
-   CONTRIBUIR (formulario)
+    CONTRIBUIR (formulario)
    ========================= */
 
 .form input,
@@ -101,7 +130,7 @@ body {
 }
 
 /* =========================
-   SOBRE NOSOTROS
+    SOBRE NOSOTROS
    ========================= */
 
 .about p {
@@ -114,7 +143,7 @@ body {
 }
 
 /* =========================
-   FOOTER
+    FOOTER
    ========================= */
 
 .site-footer {
