@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>R&M Wiki | Contribuir</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__logo">R&M</span>
+      <span class="brand__name">R&M Wiki</span>
+    </div>
+
+    <nav class="site-nav">
+      <a class="site-nav__link" href="#">Inicio</a>
+      <a class="site-nav__link" href="#">Sobre nosotros</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1 class="page-hero__title">Proponer mejora</h1>
+      <p class="page-hero__subtitle">Ayuda a mejorar la wiki del multiverso.</p>
+    </section>
+
+    <form class="form" action="#" method="post">
+      <label class="form__field">
+        <span class="form__label">Título del artículo</span>
+        <input class="form__input" type="text" name="titulo" placeholder="Ej: Morty Smith" />
+      </label>
+
+      <label class="form__field">
+        <span class="form__label">Categoría</span>
+        <select class="form__select" name="categoria">
+          <option value="">Selecciona una</option>
+          <option>Personaje</option>
+          <option>Episodio</option>
+          <option>Lugar</option>
+          <option>Objeto</option>
+        </select>
+      </label>
+
+      <label class="form__field">
+        <span class="form__label">Descripción</span>
+        <textarea class="form__textarea" name="descripcion" rows="6" placeholder="Escribe la propuesta..."></textarea>
+      </label>
+
+      <fieldset class="form__fieldset">
+        <legend class="form__legend">Nivel de spoiler</legend>
+        <label class="form__radio">
+          <input type="radio" name="spoiler" />
+          <span>Sin spoilers</span>
+        </label>
+        <label class="form__radio">
+          <input type="radio" name="spoiler" />
+          <span>Leves</span>
+        </label>
+        <label class="form__radio">
+          <input type="radio" name="spoiler" />
+          <span>Altos</span>
+        </label>
+      </fieldset>
+
+      <button class="btn" type="submit">Enviar propuesta</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__links">
+      <a href="#" class="site-footer__link">Instagram</a>
+      <a href="#" class="site-footer__link">X</a>
+      <a href="#" class="site-footer__link">YouTube</a>
+    </div>
+    <p class="site-footer__text">Contacto: contacto@rmwiki.com</p>
+  </footer>
+</body>
+</html>
