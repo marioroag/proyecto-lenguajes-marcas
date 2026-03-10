@@ -11,6 +11,9 @@
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
+
+  background-image: url("../media/bg-2.jpg");
+  background-size: cover;
 }
 
 .container {
@@ -26,12 +29,11 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  background-color: #222;
+  background-color: rgb(10, 12, 16);
   color: white;
 
-  padding-block: 2rem;
-  padding-inline: 6rem;
-  border-bottom: 0.5rem solid rgb(15, 101, 35);
+  padding: 2rem;
+  border-bottom: 0.25rem solid rgb(180, 222, 66);
 }
 
 .brand {
@@ -55,11 +57,22 @@ body {
 }
 
 .site-nav a {
+  display: flex;
+  justify-content: center;
   color: white;
 
   padding: 1rem 2rem;
-  margin-inline: 10px;
-  border: #007bff 1px solid;
+  margin-inline: 2rem;
+  width: 12rem;
+  border: rgb(209, 222, 66) 1px solid;
+  background-color: rgb(180, 222, 66);
+
+  background-image: url("../media/portal.png");
+  background-size: 20rem;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #0e5718;
 
   text-decoration: none;
 }
