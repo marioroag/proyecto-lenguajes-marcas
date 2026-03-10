@@ -23,6 +23,11 @@ body {
 .container {
   width: 80%;
   margin: 30px auto;
+  background-color: #154e1dad;
+  border: #000000 2px solid;
+  border-radius: 2rem;
+  padding: 2rem;
+
 }
 
 /* =========================
@@ -37,7 +42,7 @@ body {
   color: white;
 
   padding: 0.75rem 2.5rem;
-  border-bottom: 0.25rem solid #b4de42;
+  border-bottom: 0.25rem solid #57a03a;
   border-radius: 0.5rem;
 }
 
@@ -63,22 +68,34 @@ body {
 .site-nav a {
   display: flex;
   justify-content: center;
-  color: white;
 
   padding: 1rem 2rem;
   margin-inline: 2rem;
   width: 12rem;
-  border: #b4de42 0.1rem solid;
-  background-color: #b4de42;
 
-  background-image: url("../media/portal.png");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../media/portal.png");
   background-size: 20rem;
   background-position: center;
   background-repeat: no-repeat;
 
-  color: #0e5718;
+  border-radius: 10px;
+
+  color: aliceblue;
 
   text-decoration: none;
+
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.site-nav a:hover {
+  background-color: #c6f04a;
+  transform: translateY(-2px);
+}
+
+.site-nav a:active {
+  transform: translateY(0);
 }
 
 /* =========================
@@ -90,7 +107,7 @@ body {
   border: #b4de42 0.25rem solid;
   border-radius: 1rem;
   padding: 1.25rem;
-  margin: 1.5rem 0;
+  margin-bottom: 2rem;
 }
 
 .grid {
