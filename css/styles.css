@@ -21,45 +21,45 @@ body {
 /* =========================
     HEADER / MENU
    ========================= */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #222;
+  color: white;
+
+  padding-block: 2rem;
+  padding-inline: 6rem;
+  border-bottom: 0.5rem solid rgb(15, 101, 35);
+}
 
 .brand {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .brand__logo {
   width: 20rem;
 }
 
-.site-header {
-  background-image: url("../media/banner.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: white;
-  padding-block: 7rem;
-  padding-inline: 2rem;
-  border-bottom: 0.5rem solid rgb(15, 101, 35);
-
-}
-
 .site-nav {
+  display: flex;
+  flex-direction: row;
+
+
   color: white;
-  margin-left: 15px;
   text-decoration: none;
 }
 
 .site-nav a {
   color: white;
-  text-shadow: 1px 1px 4px black;
 
-  background-image: url("../media/portal.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  padding: 4rem 50px;
+  padding: 1rem 2rem;
+  margin-inline: 10px;
+  border: #007bff 1px solid;
 
   text-decoration: none;
 }
