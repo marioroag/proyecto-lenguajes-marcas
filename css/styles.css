@@ -175,53 +175,27 @@ main {
   align-items: flex-end;
 }
 
-.vivo {
-  position: absolute;
-
-  margin-top: 1rem;
-  padding: 0.15rem 1.25rem;
-
-  background-color: #bfeb44c6;
-  color: black;
-  border: #161916 1px solid;
-  border-radius: 0.5rem;
-
-  font-size: small;
-}
-
-.muerto {
-  position: absolute;
-
-  margin-top: 1rem;
-  padding: 0.15rem 1.25rem;
-
-  background-color: #de4242ee;
-  color: black;
-  border: #161916 1px solid;
-  border-radius: 0.5rem;
-
-  font-size: small;
-}
-
 .card img {
   width: 100%;
   height: 17rem;
 
   transition: transform 0.3s ease;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .card img:hover {
-  transform: translateY(-15px) scale(1.1);
+  transform: translateY(-14px) scale(1.1);
 }
 
 .card h2 {
   margin: 1rem 1rem;
 }
 
-.card p {
+.card__meta {
   line-height: 25px;
   margin-inline: 1rem;
+
+  color: rgba(255, 255, 255, 0.861);
 }
 
 .btn {
@@ -235,7 +209,7 @@ main {
   color: black;
 
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 
   border: none;
 
@@ -248,10 +222,40 @@ main {
 
   transform: translateY(-2px);
   transform: scale(1.1);
+
+  font-weight: 600;
 }
 
 .btn:active {
   transform: translateY(0);
+}
+
+.vivo {
+  position: absolute;
+
+  margin: 0.75rem;
+  padding: 0.25rem 1.25rem;
+
+  background-color: #bfeb44a9;
+  color: black;
+  border: #161916 1px solid;
+  border-radius: 0.5rem;
+
+  font-size: small;
+}
+
+.muerto {
+  position: absolute;
+
+  margin: 0.75rem;
+  padding: 0.25rem 1.25rem;
+
+  background-color: #de4242ee;
+  color: black;
+  border: #161916 1px solid;
+  border-radius: 0.5rem;
+
+  font-size: small;
 }
 
 /* =========================
