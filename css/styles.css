@@ -221,7 +221,7 @@ main {
   box-shadow: 0px 0px 0.50rem #a0c735;
 
   transform: translateY(-2px);
-  transform: scale(1.1);
+  transform: scale(1.05);
 
   font-weight: 600;
 }
@@ -279,13 +279,23 @@ main {
 .detail__content {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 100%;
+  padding: 2rem;
+
+  border-radius: 0.5rem;
+
+
+  border: #a0c735 1px solid;
+  box-shadow: 0px 0px 0.75rem #b4de42bc;
 
   color: aliceblue;
 }
 
 .detail img {
-  width: 400px;
-  height: 400px;
+  width: auto;
+  height: 100%;
   margin-bottom: 20px;
 
   border-radius: 0.5rem;
@@ -298,6 +308,8 @@ main {
 
 .detail ul {
   margin-top: 10px;
+
+  list-style: none;
 }
 
 /* =========================
