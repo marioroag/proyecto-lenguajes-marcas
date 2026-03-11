@@ -43,10 +43,12 @@ body {
   background-color: #161916;
   color: white;
 
-  padding: 0.75rem 2.5rem;
-  border-bottom: 0.1rem solid #b4de42;
-  box-shadow: 0px 5px 0.75rem #b4de42;
-  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem 2.5rem;
+
+  border: 0.1rem solid #b4de42a2;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.75rem #b4de42bc;
 }
 
 .brand {
@@ -109,6 +111,10 @@ body {
     INDEX (tarjetas)
    ========================= */
 .page-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   color: aliceblue;
   background-color: #161916;
 
@@ -141,16 +147,24 @@ body {
 
   width: 18rem;
   border-radius: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+
 }
 
 .card img {
   width: 100%;
   height: 65%;
   transition: transform 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .card img:hover {
-  transform: translateY(-10px) scale(1.1);
+  transform: translateY(-15px) scale(1.1);
 }
 
 .card h2 {
@@ -177,13 +191,14 @@ body {
 
   border: none;
 
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s ease, transform 0.25s ease;
 }
 
 .btn:hover {
   box-shadow: 0px 0px 0.75rem #b4de42;
 
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 .btn:active {
