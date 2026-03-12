@@ -174,7 +174,7 @@ main {
   color: aliceblue;
 
   border: 0.15rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #151a06bc;
+  box-shadow: 0px 0px 0.75rem #000000bc;
 
   width: 16rem;
   border-radius: 1rem;
@@ -292,7 +292,7 @@ main {
   gap: 3rem;
 
   border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
+  box-shadow: 0px 0px 0.5rem #070901bc;
 
   height: 100%;
 
@@ -306,14 +306,15 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
 
+  background-color: #181a1c;
+
   width: 100%;
   padding: 2rem;
 
   border-radius: 1rem;
 
-
   border: #a0c735 1px solid;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
+  box-shadow: 0px 0px 0.25rem #b4de42bc;
 
   color: aliceblue;
 }
@@ -416,7 +417,6 @@ main {
   box-shadow: 0 0 6px #bfeb44;
 }
 
-
 /* =========================
     SOBRE NOSOTROS
    ========================= */
@@ -427,9 +427,8 @@ main {
   align-items: center;
   justify-content: space-between;
 
-  background-color: #161916;
+  background-color: #181a1c;
   border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
 
   height: 100%;
   width: 100%;
@@ -437,7 +436,7 @@ main {
 
   border: #a0c735 1px solid;
   border-radius: 1rem;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
+  box-shadow: 0px 0px 1rem #000000be;
 
   color: aliceblue;
 }
@@ -445,9 +444,9 @@ main {
 .about_intro {
   padding: 1rem;
   width: 100%;
-  background-color: #161916;
+  background-color: #181a1c;
   border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
+  box-shadow: 0px 0px 0.5rem #b4de42bc;
   border-radius: 1rem;
 }
 
@@ -456,10 +455,11 @@ main {
   margin: 1rem;
   height: 100%;
   width: 100%;
-  background-color: #161916;
+  background-color: #181a1c;
+
   border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
-  border-radius: 0.5rem;
+  box-shadow: 0px 0px 0.5rem #b4de42bc;
+  border-radius: 1rem;
 }
 
 .team {
@@ -469,8 +469,8 @@ main {
   height: 100%;
   background-color: #161916;
   border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.75rem #b4de42bc;
-  border-radius: 0.5rem;
+  box-shadow: 0px 0px 0.5rem #b4de42bc;
+  border-radius: 1rem;
 }
 
 .about p {
