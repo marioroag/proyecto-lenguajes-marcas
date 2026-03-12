@@ -80,9 +80,15 @@ main {
   align-items: center;
   text-decoration: none;
   color: aliceblue;
+
+}
+
+.brand__logo:hover {
+  transform: rotate(2deg);
 }
 
 .brand__logo {
+  transition: transform 1s ease;
   width: 20rem;
 }
 
@@ -105,7 +111,7 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../media/portal.png");
-  background-size: 20rem;
+  background-size: 18rem;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -117,7 +123,7 @@ main {
   text-decoration: none;
   text-shadow: 1px 1px 10px #161916;
 
-  transition: transform 0.15s ease, background-size 0.6s ease;
+  transition: transform 0.15s ease, background-size 0.8s ease;
 }
 
 .site-nav a:hover {
@@ -170,7 +176,7 @@ main {
   border: 0.15rem solid #bfeb44c6;
   box-shadow: 0px 0px 0.75rem #151a06bc;
 
-  width: 18rem;
+  width: 16rem;
   border-radius: 1rem;
 
   transition: transform 0.3s ease;
@@ -196,12 +202,13 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.card img:hover {
+
+.card:hover img {
   transform: translateY(-14px) scale(1.1);
 }
 
 .card h2 {
-  margin: 1rem 1rem;
+  margin: 0.75rem 0.75rem;
 }
 
 .card__meta {
@@ -215,7 +222,7 @@ main {
   display: flex;
   justify-content: center;
 
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding: 10px 18px;
 
   background-color: #bfeb44c6;
@@ -231,10 +238,9 @@ main {
 
 .btn:hover {
   background-color: #c2ee48;
-  box-shadow: 0px 0px 0.50rem #a0c735;
+  box-shadow: 0px 0px 0.5rem #a0c735;
 
-  transform: translateY(-2px);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.1);
 
   font-weight: 600;
 }
@@ -243,16 +249,22 @@ main {
   transform: translateY(0);
 }
 
+
+.card:has(.btn:hover) {
+  box-shadow: 0px 0px 0.5rem #a0c735;
+  transform: translateY(-2px) scale(1.05);
+}
+
 .vivo {
   position: absolute;
 
   margin: 0.75rem;
   padding: 0.25rem 1.25rem;
 
-  background-color: #bfeb44a9;
+  background-color: #bfeb44bd;
   color: black;
   border: #161916 1px solid;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 
   font-size: small;
 }
@@ -263,7 +275,7 @@ main {
   margin: 0.75rem;
   padding: 0.25rem 1.25rem;
 
-  background-color: #de4242ee;
+  background-color: #ee4848ee;
   color: black;
   border: #161916 1px solid;
   border-radius: 1rem;
@@ -423,4 +435,9 @@ main {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+}
+
+.site-footer__link img {
+  width: auto;
+  height: 30px;
 }
