@@ -30,7 +30,7 @@ body::before {
   background-size: cover;
   background-position: center;
 
-  filter: blur(2px);
+  filter: blur(1.5px);
   transform: scale(1.05);
 }
 
@@ -337,6 +337,39 @@ main {
   list-style: none;
 }
 
+.btn_detalle {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 1.25rem;
+  padding: 10px 18px;
+
+  background-color: #bfeb44c6;
+  color: black;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  border-radius: 16px;
+  border: none;
+
+  transition: background-color 0.2s ease, transform 0.25s ease;
+}
+
+.btn_detalle:hover {
+  background-color: #c2ee48;
+  box-shadow: 0px 0px 0.5rem #a0c735;
+
+  transform: translateY(-1px);
+
+  font-weight: 600;
+}
+
+.btn_detalle:active {
+  transform: translateY(0);
+}
+
+
 /* =========================
     CONTRIBUIR (formulario)
    ========================= */
@@ -344,10 +377,45 @@ main {
 .form input,
 .form select,
 .form textarea {
-  width: 100%;
   padding: 8px;
-  margin: 10px 0;
+  margin: 10px 0px;
+
+  background-color: #161916;
+  color: white;
+
+  border: 1px solid #bfeb44c6;
+  border-radius: 6px;
 }
+
+.form input:not([type="radio"]),
+.form select,
+.form textarea {
+  width: 100%;
+}
+
+.form__radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0.25rem 1rem;
+}
+
+.form__fieldset {
+  border: #b4de42 1px solid;
+}
+
+.form__legend {
+  margin-left: 0.75rem;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border: 1px solid #bfeb44;
+  box-shadow: 0 0 6px #bfeb44;
+}
+
 
 /* =========================
     SOBRE NOSOTROS
@@ -375,7 +443,6 @@ main {
 }
 
 .about_intro {
-
   padding: 1rem;
   width: 100%;
   background-color: #161916;
