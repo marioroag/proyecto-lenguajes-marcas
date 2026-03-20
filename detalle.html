@@ -27,18 +27,18 @@
 
   <main class="container">
     <article class="detail">
-      <img class="detail__img" src="../media/1.jpeg" alt="Imagen del artículo" />
+      <img class="detail__img" id="imagen-personaje" src="../media/1.jpeg" alt="Imagen del artículo" />
 
       <div class="detail__content">
-        <h1 class="detail__title">Rick Sanchez</h1>
+        <h1 class="detail__title" id="nombre-personaje">Rick Sanchez</h1>
         <p class="detail__desc">
           Descripción estilo wiki: quién es, qué hace, por qué es relevante, etc.
         </p>
 
         <ul class="detail__facts">
           <li><strong>Categoría:</strong> Personaje</li>
-          <li><strong>Especie:</strong> Humano</li>
-          <li><strong>Estado:</strong> Vivo</li>
+          <li id="especie-personaje"><strong>Especie:</strong> Humano</li>
+          <li id="estado-personaje"><strong>Estado:</strong> Vivo</li>
         </ul>
 
         <a class="btn_detalle" href="contribuir.html">Proponer mejora</a>
@@ -60,6 +60,8 @@
     </div>
     <a class="site-footer__text" href="mailto:contacto@rmwiki.com">Contacto: contacto@rmwiki.com</a>
   </footer>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
