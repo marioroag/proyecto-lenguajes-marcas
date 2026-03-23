@@ -83,7 +83,8 @@ main {
 }
 
 .brand__logo:hover {
-  transform: rotate(2deg);
+  animation: animacionGiro 1s infinite alternate ease-in-out;
+
 }
 
 .brand__logo {
@@ -319,12 +320,17 @@ main {
   }
 }
 
+@keyframes animacionGiro {
+  to {
+    transform: rotate(2deg);
+  }
+}
+
 .tarjeta-favorito {
   border: 0.15rem solid #a0c735;
   box-shadow: 0px 0px 0.25rem #b4de42;
 
-  animation: animacionFlotando 0.75s infinite alternate linear;
-  animation-timing-function: ease-in-out;
+  animation: animacionFlotando 0.75s infinite alternate ease-in-out;
 }
 
 /* =========================
