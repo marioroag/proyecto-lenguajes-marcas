@@ -1,14 +1,68 @@
+// [ Constantes ]
 const botonesDetalle = document.querySelectorAll(".btn-detalle");
+const botonesFavoritos = document.querySelectorAll(".btn-favo");
+const tarjetasPersonaje = document.querySelector(".card");
+const contadorFavoritos = document.getElementById("contadorFavoritos")
 
+// [ Asigna eventos ]
+// BOTONES DETALLES
 botonesDetalle.forEach((boton) => {
     boton.addEventListener("click", () => {
         event.preventDefault();
         const idPersonaje = boton.dataset.id;
         window.location.href = `detalle.html?id=${idPersonaje}`;
-        alert(window.location.href );
+        alert(window.location.href);
     });
 });
 
+// BOTONES FAVORITO
+botonesFavoritos.forEach((boton) => engancharClickBoton(boton));
+
+for (const tarjeta of tarjetasPersonaje) {
+    tarjeta.classList.add("tarjeta-no-favorito")
+}
+
+function engancharClickBoton(boton) {
+    boton.addEventListener("click", function () {
+        tarjetaBoton = boton.parentElement.parentElement.parentElement
+        alternarFavorito(tarjetaBoton);
+        console.log(boton.parentElement.parentElement.parentElement);
+    });
+}
+
+function alternarFavorito(tarjetaSeleccionada) {
+    if (tarjetaSeleccionada) {
+
+        if (!tarjetaSeleccionada.classList.contains("tarjeta-favorito")) {
+            tarjetaSeleccionada.classList.add("tarjeta-favorito")
+        } else {
+            tarjetaSeleccionada.classList.remove("tarjeta-favorito")
+        }
+
+        actualizarContadorGeneral()
+    }
+}
+
+// Contador favoritos
+function calcularPersonajesFavoritos() {
+    let contador = 0
+
+    for (const tarjeta of tarjetasPersonaje) {
+        if (tarjeta.dataset.favorito === "si") {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+
+function actualizarContadorGeneral() {
+    let contador = calcularPersonajesFavoritos()
+    contadorFavoritos.textContent = contador
+}
+
+// [ Objetos informacion ]
 const personajes = [
     {
         id: "1",
