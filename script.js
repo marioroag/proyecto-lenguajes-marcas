@@ -25,18 +25,20 @@ for (const tarjeta of tarjetasPersonaje) {
 function engancharClickBoton(boton) {
     boton.addEventListener("click", function () {
         tarjetaBoton = boton.parentElement.parentElement.parentElement
-        alternarFavorito(tarjetaBoton);
+        alternarFavorito(tarjetaBoton, boton);
         console.log(boton.parentElement.parentElement.parentElement);
     });
 }
 
-function alternarFavorito(tarjetaSeleccionada) {
+function alternarFavorito(tarjetaSeleccionada, boton) {
     if (tarjetaSeleccionada) {
 
         if (!tarjetaSeleccionada.classList.contains("tarjeta-favorito")) {
             tarjetaSeleccionada.classList.add("tarjeta-favorito")
+            boton.style.backgroundImage = "url(../media/fav-icon-full.png)";
         } else {
             tarjetaSeleccionada.classList.remove("tarjeta-favorito")
+            boton.style.backgroundImage = "url(../media/fav-icon.png)";
         }
 
         actualizarContadorGeneral()
