@@ -368,6 +368,9 @@ main {
   height: 100%;
   margin-bottom: 20px;
 
+  height: 100%;
+  width: 25rem;
+
   border-radius: 1rem;
 
 }
