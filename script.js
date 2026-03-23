@@ -3,6 +3,7 @@ const botonesDetalle = document.querySelectorAll(".btn-detalle");
 const botonesFavoritos = document.querySelectorAll(".btn-favo");
 const tarjetasPersonaje = document.querySelectorAll(".card");
 const contadorFavoritos = document.getElementById("contador-favoritos")
+const botonEsconder = document.getElementById("boton_esconder")
 
 // [ Asigna eventos ]
 // BOTONES DETALLES
@@ -69,42 +70,48 @@ const personajes = [
         nombre: "Rick Sanchez",
         imagen: "../media/1.jpeg",
         especie: "Humano",
-        estado: "Vivo"
+        estado: "Vivo",
+        descripcion: "Científico brillante pero alcohólico y cínico, Rick es el abuelo de Morty. Viaja por el multiverso viviendo aventuras peligrosas mientras desprecia muchas normas sociales."
     },
     {
         id: "2",
         nombre: "Morty Smith",
         imagen: "../media/2.png",
         especie: "Humano",
-        estado: "Vivo"
+        estado: "Vivo",
+        descripcion: "Nieto de Rick, Morty es un chico inseguro pero con buen corazón. A menudo acompaña a su abuelo en sus locas aventuras, aunque suele ser quien sufre las consecuencias."
     },
     {
         id: "3",
         nombre: "Summer Smith",
         imagen: "../media/3.jpeg",
         especie: "Humana",
-        estado: "Viva"
+        estado: "Viva",
+        descripcion: "Hermana mayor de Morty, Summer es más independiente y segura de sí misma. Aunque al principio parece superficial, demuestra ser valiente y adaptarse bien a situaciones extremas."
     },
     {
         id: "4",
         nombre: "Beth Smith",
         imagen: "../media/4.jpeg",
         especie: "Humana",
-        estado: "Viva"
+        estado: "Viva",
+        descripcion: "Madre de Morty y Summer, Beth es una cirujana de caballos inteligente pero emocionalmente compleja. Tiene una relación complicada con Rick, marcada por admiración y conflictos."
     },
     {
         id: "5",
         nombre: "Jerry Smith",
         imagen: "../media/5.png",
-        especie: "Humana",
-        estado: "Viva"
+        especie: "Humano",
+        estado: "Vivo",
+        descripcion: "Padre de familia inseguro y algo torpe, Jerry suele ser el blanco de burlas. A pesar de ello, intenta hacer lo correcto y mantener a su familia unida."
     },
     {
         id: "6",
         nombre: "Sr. Ojete Sucio",
         imagen: "../media/6.jpg",
         especie: "Desconocido",
-        estado: "Viva"
+        estado: "Muerto",
+        descripcion: "Personaje misterioso que aparece brevemente en la serie. Su origen y naturaleza no están claros, lo que lo convierte en una figura curiosa dentro del universo de la historia."
     }
 ];
 
@@ -119,5 +126,6 @@ if (personajeEncontrado) {
     document.querySelector("#imagen-personaje").alt = personajeEncontrado.nombre;
     document.querySelector("#especie-personaje").textContent = personajeEncontrado.especie;
     document.querySelector("#estado-personaje").textContent = personajeEncontrado.estado;
+    document.querySelector("#descripcion-personaje").textContent = personajeEncontrado.descripcion;
 }
 
