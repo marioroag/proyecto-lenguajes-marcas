@@ -191,7 +191,6 @@ main {
 }
 
 .card:hover {
-  transform: scale(1.01);
   animation: animacionFlotando 0.75s infinite alternate ease-in-out;
 }
 
@@ -259,7 +258,6 @@ main {
 .card:has(.btn:hover) {
   border-color: #c2ee48;
   box-shadow: 0px 0px 0.5rem #a0c735;
-  transform: scale(1.02);
 }
 
 .vivo {
@@ -318,7 +316,7 @@ main {
 
 @keyframes animacionFlotando {
   to {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
   }
 }
 
@@ -504,6 +502,7 @@ main {
 .form textarea {
   padding: 8px;
   margin: 10px 0px;
+  width: 100%;
 
   background-color: #161916;
   color: aliceblue;
@@ -512,17 +511,21 @@ main {
   border-radius: 6px;
 }
 
-.form input:not([type="radio"]),
-.form select,
-.form textarea {
-  width: 100%;
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border: 1px solid #bfeb44;
+  box-shadow: 0 0 6px #bfeb44;
 }
 
 .form__radio {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0.25rem 1rem;
+  margin: 1rem 1.5rem;
+
+  width: 4rem;
 }
 
 .form__fieldset {
@@ -530,15 +533,42 @@ main {
 }
 
 .form__legend {
-  margin-left: 0.75rem;
+  margin-left: 1rem;
 }
 
-.form input:focus,
-.form select:focus,
-.form textarea:focus {
-  outline: none;
-  border: 1px solid #bfeb44;
-  box-shadow: 0 0 6px #bfeb44;
+.btn_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 2.75rem;
+  margin-top: 2rem;
+
+
+  background-color: #bfeb44c6;
+  color: black;
+
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  border-radius: 16px;
+  border: none;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn_form:hover {
+  background-color: #c2ee48;
+  box-shadow: 0px 0px 0.5rem #a0c735;
+
+  transform: translateY(-5px);
+
+}
+
+.btn_form:active {
+  transform: translateY(0);
 }
 
 /* =========================
@@ -662,8 +692,8 @@ li {
   background-color: #161916;
   color: aliceblue;
 
-  padding: 15px;
-  margin-top: 40px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .site-footer a {
@@ -672,7 +702,14 @@ li {
   text-decoration: none;
 }
 
+.site-footer a:hover {
+  color: #a0c735;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
 .site-footer__link img {
   width: auto;
+  width: 30px;
   height: 30px;
 }
