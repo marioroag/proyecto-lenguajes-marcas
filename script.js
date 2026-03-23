@@ -13,14 +13,15 @@ const container = document.querySelector(".container")
 // BOTON ESCONDER
 if (botonEsconder) {
     botonEsconder.addEventListener("click", function () {
+        infoPersonaje.classList.toggle("detail__esconder");
+        detail.classList.toggle("detail__encogido")
+        container.classList.toggle("container__encogido")
+
         if (infoPersonaje.classList.contains("detail__esconder")) {
             this.textContent = "Mostrar ficha"
         } else {
             this.textContent = "Ocultar ficha"
         }
-        infoPersonaje.classList.toggle("detail__esconder");
-        detail.classList.toggle("detail__encogido")
-        container.classList.toggle("container__encogido")
     });
 }
 
