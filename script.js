@@ -11,7 +11,6 @@ botonesDetalle.forEach((boton) => {
         event.preventDefault();
         const idPersonaje = boton.dataset.id;
         window.location.href = `detalle.html?id=${idPersonaje}`;
-        alert(window.location.href);
     });
 });
 
