@@ -1,8 +1,8 @@
 // [ Constantes ]
 const botonesDetalle = document.querySelectorAll(".btn-detalle");
 const botonesFavoritos = document.querySelectorAll(".btn-favo");
-const tarjetasPersonaje = document.querySelector(".card");
-const contadorFavoritos = document.getElementById("contadorFavoritos")
+const tarjetasPersonaje = document.querySelectorAll(".card");
+const contadorFavoritos = document.getElementById("contador-favoritos")
 
 // [ Asigna eventos ]
 // BOTONES DETALLES
@@ -48,14 +48,13 @@ function calcularPersonajesFavoritos() {
     let contador = 0
 
     for (const tarjeta of tarjetasPersonaje) {
-        if (tarjeta.dataset.favorito === "si") {
+        if (tarjeta.classList.contains("tarjeta-favorito")) {
             contador++
         }
     }
 
     return contador
 }
-
 
 function actualizarContadorGeneral() {
     let contador = calcularPersonajesFavoritos()
