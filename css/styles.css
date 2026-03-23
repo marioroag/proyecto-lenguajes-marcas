@@ -18,7 +18,6 @@ body {
 }
 
 body::before {
-  /* TODO: Aprender que son las 3 propiedades abajo */
   content: "";
   position: fixed;
   inset: 0;
@@ -87,12 +86,11 @@ main {
 }
 
 .brand__logo:hover {
-  animation: animacionGiro 1s infinite alternate ease-in-out;
+  animation: animacionGiro 2s infinite alternate ease-in-out;
 
 }
 
 .brand__logo {
-  transition: transform 1s ease;
   width: 18rem;
 }
 
@@ -325,8 +323,16 @@ main {
 }
 
 @keyframes animacionGiro {
+  from {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-2deg) scale(1.03);
+  }
+
   to {
-    transform: rotate(2deg);
+    transform: rotate(0deg);
   }
 }
 
