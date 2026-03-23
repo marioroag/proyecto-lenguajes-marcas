@@ -69,7 +69,7 @@ main {
   color: aliceblue;
 
   margin: 1.5rem;
-  padding: 1rem 2.5rem;
+  padding: 1.25rem 2.5rem;
 
   border: 0.1rem solid #bfeb44c6;
   box-shadow: 0px 0px 0.75rem #b4de42bc;
@@ -91,7 +91,7 @@ main {
 }
 
 .brand__logo {
-  width: 18rem;
+  width: 16rem;
 }
 
 .site-nav {
@@ -591,7 +591,10 @@ main {
 .about__list ol {
   list-style-type: decimal;
   list-style-position: inside;
+}
 
+li {
+  margin-block: 0.75rem;
 }
 
 .team {
