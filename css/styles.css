@@ -426,6 +426,22 @@ main {
 /* =========================
     CONTRIBUIR (formulario)
    ========================= */
+.contribuir {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #161916;
+  border: 0.1rem solid #bfeb44c6;
+
+  padding: 2rem;
+
+  border: #a0c735 1px solid;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1rem #000000be;
+
+  color: aliceblue;
+}
 
 .form input,
 .form select,
