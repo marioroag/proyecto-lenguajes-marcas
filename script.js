@@ -4,6 +4,13 @@ const botonesFavoritos = document.querySelectorAll(".btn-favo");
 const tarjetasPersonaje = document.querySelectorAll(".card");
 const contadorFavoritos = document.getElementById("contador-favoritos")
 const botonEsconder = document.getElementById("boton_esconder")
+const infoPersonaje = document.querySelector(".detail__content")
+
+if (botonEsconder) {
+    botonEsconder.addEventListener("click", function () {
+        infoPersonaje.classList.toggle("detail__esconder");
+    });
+}
 
 // [ Asigna eventos ]
 // BOTONES DETALLES
@@ -24,15 +31,15 @@ for (const tarjeta of tarjetasPersonaje) {
 
 function engancharClickBoton(boton) {
     boton.addEventListener("click", function () {
-        tarjetaBoton = boton.parentElement.parentElement.parentElement
+        const tarjetaBoton = boton.closest(".card");
         alternarFavorito(tarjetaBoton, boton);
-        console.log(boton.parentElement.parentElement.parentElement);
     });
 }
 
 function alternarFavorito(tarjetaSeleccionada, boton) {
-    if (tarjetaSeleccionada) {
+    console.log("HOLA");
 
+    if (tarjetaSeleccionada) {
         if (!tarjetaSeleccionada.classList.contains("tarjeta-favorito")) {
             tarjetaSeleccionada.classList.add("tarjeta-favorito")
             boton.style.backgroundImage = "url(../media/fav-icon-full.png)";
@@ -45,7 +52,7 @@ function alternarFavorito(tarjetaSeleccionada, boton) {
     }
 }
 
-// Contador favoritos
+// CONTADOR FAVORITOS
 function calcularPersonajesFavoritos() {
     let contador = 0
 
@@ -118,7 +125,6 @@ const personajes = [
 const parametros = new URLSearchParams(window.location.search);
 const idPersonaje = parametros.get("id");
 const personajeEncontrado = personajes.find((personaje) => personaje.id === idPersonaje);
-console.log(personajeEncontrado);
 
 if (personajeEncontrado) {
     document.querySelector("#nombre-personaje").textContent = personajeEncontrado.nombre;

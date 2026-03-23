@@ -351,6 +351,8 @@ main {
   padding: 2rem;
 }
 
+
+
 .detail__content {
   display: flex;
   flex-direction: column;
@@ -367,6 +369,10 @@ main {
   box-shadow: 0px 0px 0.25rem #b4de42bc;
 
   color: aliceblue;
+}
+
+.detail__esconder {
+  display: none;
 }
 
 .detail img {
@@ -422,6 +428,8 @@ main {
 .btn_detalle:active {
   transform: translateY(0);
 }
+
+.boton_esconder {}
 
 /* =========================
     CONTRIBUIR (formulario)
