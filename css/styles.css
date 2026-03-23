@@ -115,7 +115,7 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../media/portal.png");
-  background-size: 14rem;
+  background-size: 16rem;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -131,15 +131,15 @@ main {
 }
 
 .site-nav a:hover {
-  box-shadow: 0px 0px 0.75rem #b4de42;
+  box-shadow: 0px 0px 0.5rem #b4de42;
 
-  background-size: 22rem;
+  background-size: 24rem;
   transform: scale(1.05);
 }
 
 .site-nav a:active {
   background-size: 14rem;
-  transform: translateY(2px);
+  transform: scale(1);
 }
 
 /* =========================
@@ -194,7 +194,7 @@ main {
 
 .card:hover {
   transform: scale(1.01);
-
+  animation: animacionFlotando 0.75s infinite alternate ease-in-out;
 }
 
 .card_header {
@@ -255,7 +255,7 @@ main {
 }
 
 .btn:active {
-  transform: translateY(1px);
+  transform: translateY(0px);
 }
 
 .card:has(.btn:hover) {
@@ -331,10 +331,17 @@ main {
 }
 
 .tarjeta-favorito {
-  border: 0.15rem solid #a0c735;
-  box-shadow: 0px 0px 0.25rem #b4de42;
+  border: 0.15rem solid gold;
+  box-shadow: 0px 0px 0.25rem gold;
+}
 
-  animation: animacionFlotando 0.75s infinite alternate ease-in-out;
+
+.tarjeta-favorito h2 {
+  color: gold;
+}
+
+.tarjeta-favorito .btn {
+  background-color: gold;
 }
 
 /* =========================
