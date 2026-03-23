@@ -4,15 +4,21 @@ const botonesFavoritos = document.querySelectorAll(".btn-favo");
 const tarjetasPersonaje = document.querySelectorAll(".card");
 const contadorFavoritos = document.getElementById("contador-favoritos")
 const botonEsconder = document.getElementById("boton_esconder")
-const infoPersonaje = document.querySelector(".detail__content")
+const infoPersonaje = document.querySelector(".detail__info")
+const detail = document.querySelector(".detail")
+const container = document.querySelector(".container")
 
+
+// [ Asigna eventos ]
+// BOTON ESCONDER
 if (botonEsconder) {
     botonEsconder.addEventListener("click", function () {
         infoPersonaje.classList.toggle("detail__esconder");
+        detail.classList.toggle("detail__encogido")
+        container.classList.toggle("container__encogido")
     });
 }
 
-// [ Asigna eventos ]
 // BOTONES DETALLES
 botonesDetalle.forEach((boton) => {
     boton.addEventListener("click", () => {

@@ -54,6 +54,10 @@ main {
   padding: 2rem;
 }
 
+.container__encogido {
+  width: auto;
+}
+
 /* =========================
     HEADER / MENU
    ========================= */
@@ -111,7 +115,7 @@ main {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../media/portal.png");
-  background-size: 18rem;
+  background-size: 14rem;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -129,12 +133,13 @@ main {
 .site-nav a:hover {
   box-shadow: 0px 0px 0.75rem #b4de42;
 
-  background-size: 25rem;
+  background-size: 22rem;
   transform: scale(1.05);
 }
 
 .site-nav a:active {
-  transform: scale(1);
+  background-size: 14rem;
+  transform: translateY(2px);
 }
 
 /* =========================
@@ -244,15 +249,14 @@ main {
   background-color: #c2ee48;
   box-shadow: 0px 0px 0.5rem #a0c735;
 
-  transform: translateY(-2px) scale(1.1);
+  transform: translateY(-1px) scale(1.1);
 
   font-weight: 600;
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(1px);
 }
-
 
 .card:has(.btn:hover) {
   border-color: #c2ee48;
@@ -339,6 +343,7 @@ main {
 
 .detail {
   display: flex;
+  flex-direction: column;
   gap: 3rem;
 
   border: 0.1rem solid #bfeb44c6;
@@ -351,9 +356,16 @@ main {
   padding: 2rem;
 }
 
+.detail__encogido {
+  width: 24rem;
+}
 
+.detail__top {
+  display: flex;
+  gap: 1.5rem;
+}
 
-.detail__content {
+.detail__info {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -376,15 +388,9 @@ main {
 }
 
 .detail img {
-  width: auto;
-  height: 100%;
-  margin-bottom: 20px;
-
-  height: 100%;
   width: 25rem;
-
+  height: 20rem;
   border-radius: 1rem;
-
 }
 
 .detail h1 {
@@ -401,8 +407,8 @@ main {
   display: flex;
   justify-content: center;
 
-  margin-top: 1.25rem;
   padding: 10px 18px;
+  margin-top: 1rem;
 
   background-color: #bfeb44c6;
   color: black;
@@ -422,14 +428,43 @@ main {
 
   transform: translateY(-1px);
 
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn_detalle:active {
   transform: translateY(0);
 }
 
-.boton_esconder {}
+#boton_esconder {
+  display: flex;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  background-color: #bfeb44c6;
+  color: black;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  border-radius: 16px;
+  border: none;
+
+  transition: background-color 0.2s ease, transform 0.25s ease;
+}
+
+#boton_esconder:hover {
+  background-color: #c2ee48;
+  box-shadow: 0px 0px 0.5rem #a0c735;
+
+  transform: translateY(-1px);
+
+  font-weight: 600;
+}
+
+#boton_esconder:active {
+  transform: translateY(2px);
+}
 
 /* =========================
     CONTRIBUIR (formulario)
