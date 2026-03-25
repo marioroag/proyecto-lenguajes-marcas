@@ -159,11 +159,29 @@ async function obtenerPersonaje(nombreOId) {
             throw new Error("No se encontró el personaje");
         }
         const datos = await respuesta.json();
+        console.log(datos.origin);
         console.log(datos);
+        mostrarPersonaje(datos);
+
 
     } catch (error) {
-        console.error("Error al obtener el persponaje:", error);
+        console.error("Error al obtener el personaje:", error);
     }
 }
 
-obtenerPersonaje(2)
+obtenerPersonaje(1)
+
+
+// TODO: Si da tiempo, mostrar episodios en una lista desplegable
+// Función para mostrar los datos del Pokémon en la página
+function mostrarPersonaje(datos) {
+    const contenedor = document.getElementById("personaje-info");
+
+    contenedor.innerHTML = `
+        <h2>${datos.name.toUpperCase()}</h2>
+        <img src="${datos.image}" alt="Imagen de ${datos.name}">
+        <p><strong>Especie:</strong> ${datos.species} kg</p>
+        <p><strong>Estado:</strong>${datos.status}</p>
+        <p><strong>Origen:</strong>${datos.origin}</p>
+    `
+}
