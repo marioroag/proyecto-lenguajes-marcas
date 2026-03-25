@@ -2,11 +2,12 @@
     ESTILOS GENERALES
    ========================= */
 
-/* TODO: PREGUNTAR POR NOMENCLATURA DE CLASES EN HTML Y ACTUALIZAR LAS DIFERENTES A ESA */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  scrollbar-color: #619f2b63 lightgreen;
 }
 
 body {
@@ -269,7 +270,7 @@ main {
   box-shadow: 0px 0px 0.5rem #a0c735;
 }
 
-.vivo {
+.etiqueta {
   position: absolute;
 
   margin: 0.75rem;
@@ -277,26 +278,20 @@ main {
 
   font-weight: 450;
 
-  background-color: #b4de42;
-  color: black;
+  color: #ffffff;
   border: #161916 1px solid;
   border-radius: 0.5rem;
 
   font-size: small;
 }
 
+.vivo {
+  background-color: #529001;
+
+}
+
 .muerto {
-  position: absolute;
-
-  margin: 0.75rem;
-  padding: 0.25rem 1.25rem;
-
-  background-color: #d04646;
-  color: black;
-  border: #161916 1px solid;
-  border-radius: 0.5rem;
-
-  font-size: small;
+  background-color: #bb2828;
 }
 
 .card_body_header {
