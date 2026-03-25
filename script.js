@@ -49,7 +49,6 @@ function engancharClickBoton(boton) {
 }
 
 function alternarFavorito(tarjetaSeleccionada, boton) {
-    console.log("HOLA");
 
     if (tarjetaSeleccionada) {
         if (!tarjetaSeleccionada.classList.contains("tarjeta-favorito")) {
@@ -163,8 +162,22 @@ async function obtenerPersonaje(id) {
             throw new Error("No se encontró el personaje");
         }
         const datos = await respuesta.json();
-        console.log(datos.origin);
-        console.log(datos);
+        mostrarPersonaje(datos);
+
+    } catch (error) {
+        parrafoError.textContent = "Error al obtener el personaje:", error;
+    }
+}
+
+
+async function obtenerEpisodio(id) {
+    try {
+        const respuesta = await fetch(`${apiUrl}/episode/${id}`);
+        if (!respuesta.ok) {
+            parrafoError.textContent = "No se encontró el personaje:", error;
+            throw new Error("No se encontró el personaje");
+        }
+        const datos = await respuesta.json();
         mostrarPersonaje(datos);
 
     } catch (error) {
@@ -174,20 +187,12 @@ async function obtenerPersonaje(id) {
 
 // Personaje que se muestra por defecto
 obtenerPersonaje(1)
+const contenedorEpisodios = document.getElementById("resultado-busqueda-episodios");
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
-// Función para mostrar los datos del Pokémon en la página
+// Función para mostrar los datos del personaje en la página
 function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
-    const contenedorEpisodios = document.getElementById("resultado-busqueda-episodios");
-    let episodios = "";
-
-    // Episodios
-    for (const episodio of datos.episode) {
-        episodios += episodio.name + " | " + episodio.air_date + "\n"
-    }
-
-    console.log(episodios);
 
     contenedor.innerHTML = `
         <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
@@ -196,18 +201,20 @@ function mostrarPersonaje(datos) {
         <p><strong>Estado:</strong> ${datos.status}</p>
         <p><strong>Origen:</strong> ${datos.origin.name}</p>
     `
-
-    contenedorEpisodios.innerHTML = `
-        <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
-        <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
-        <p><strong>Especie:</strong> ${datos.species}</p>
-        <p><strong>Estado:</strong> ${datos.status}</p>
-        <p><strong>Origen:</strong> ${datos.origin.name}</p>
-    `
-
-
 }
 
+function mostrarEpisodios(datos) {
+    const contenedor = document.getElementById("resultado-episodios");
+    let episodios = ''
+
+    // Episodios
+    for (const episodio of datos.episode) {
+        episodios += episodio.name + " | " + episodio.air_date + "\n"
+    }
+
+    contenedor.innerHTML = episodios;
+}
+mostrarEpisodios(obtenerPersonaje(1))
 // Manejo del formulario de búsqueda
 document.getElementById("busqueda-form").addEventListener("submit", function (event) {
     event.preventDefault();
