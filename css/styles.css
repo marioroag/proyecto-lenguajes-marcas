@@ -716,7 +716,9 @@ li {
   align-items: center;
 }
 
-#error-busqueda {}
+#error-busqueda {
+  color: lightcoral;
+}
 
 /* =========================
     FOOTER
@@ -746,7 +748,6 @@ li {
 }
 
 .site-footer__link img {
-  width: auto;
   width: 30px;
   height: 30px;
 }

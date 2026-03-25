@@ -153,11 +153,13 @@ if (personajeEncontrado) {
 
 const apiUrl = "https://rickandmortyapi.com/api/";
 
+// TODO: ARREGLAR Mensaje error funciona al poner id no existente en vs pero no en el campo de busqueda
 // Función para obtener datos de un personaje por su ID
-async function obtenerPersonaje(nombreOId) {
+async function obtenerPersonaje(id) {
     try {
-        const respuesta = await fetch(`${apiUrl}/character/${nombreOId}`);
+        const respuesta = await fetch(`${apiUrl}/character/${id}`);
         if (!respuesta.ok) {
+            parrafoError.textContent = "No se encontró el personaje:", error;
             throw new Error("No se encontró el personaje");
         }
         const datos = await respuesta.json();
@@ -170,7 +172,7 @@ async function obtenerPersonaje(nombreOId) {
     }
 }
 
-obtenerPersonaje(1)
+obtenerPersonaje(223213323)
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del Pokémon en la página
