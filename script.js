@@ -158,41 +158,47 @@ async function obtenerPersonaje(id) {
     try {
         const respuesta = await fetch(`${apiUrl}/character/${id}`);
         if (!respuesta.ok) {
-            parrafoError.textContent = "No se encontró el personaje:", error;
+            parrafoError.textContent = "No se encontró el personaje:" + error;
             throw new Error("No se encontró el personaje");
         }
         const datos = await respuesta.json();
         mostrarPersonaje(datos);
 
     } catch (error) {
-        parrafoError.textContent = "Error al obtener el personaje:", error;
-    }
-}
-
-
-async function obtenerEpisodio(id) {
-    try {
-        const respuesta = await fetch(`${apiUrl}/episode/${id}`);
-        if (!respuesta.ok) {
-            parrafoError.textContent = "No se encontró el personaje:", error;
-            throw new Error("No se encontró el personaje");
-        }
-        const datos = await respuesta.json();
-        mostrarPersonaje(datos);
-
-    } catch (error) {
-        parrafoError.textContent = "Error al obtener el personaje:", error;
+        parrafoError.textContent = "Error al obtener el personaje:" + error;
     }
 }
 
 // Personaje que se muestra por defecto
-obtenerPersonaje(1)
-const contenedorEpisodios = document.getElementById("resultado-busqueda-episodios");
+obtenerPersonaje(200)
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del personaje en la página
 function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
+    const contenedorEpisodios = document.getElementById("resultado-episodios");
+
+    let episodios = "";
+    console.log(datos.episode);
+
+    // Episodios
+    for (let i = 0; i < datos.episode.length; i++) {
+        episodios += obtenerEpisodio(datos.episode[i]);
+    }
+
+    // for (const episodio of datos.episode) {
+    //     const idEpisodio = episodio[texto.length - 1];
+    //     console.log(idEpisodio);
+    //     console.log(episodio);
+
+    // }
+
+    console.log(episodios);
+    contenedorEpisodios.innerHTML = `
+        <ul>
+            <p>HOLA</p>
+        </ul>
+    `
 
     contenedor.innerHTML = `
         <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
@@ -203,18 +209,23 @@ function mostrarPersonaje(datos) {
     `
 }
 
-function mostrarEpisodios(datos) {
-    const contenedor = document.getElementById("resultado-episodios");
-    let episodios = ''
+// Función para obtener datos de un episodio por su ID
+async function obtenerEpisodio(url) {
+    try {
+        const respuesta = await fetch(`${url}`);
 
-    // Episodios
-    for (const episodio of datos.episode) {
-        episodios += episodio.name + " | " + episodio.air_date + "\n"
+        if (!respuesta.ok) {
+            console.log("No se encontró el episodio:");
+            throw new Error("No se encontró el episodio");
+        }
+        const datos = await respuesta.json();
+
+    } catch (error) {
+        console.log("Error no se encontró el episodio " + error);
+
     }
-
-    contenedor.innerHTML = episodios;
 }
-mostrarEpisodios(obtenerPersonaje(1))
+
 // Manejo del formulario de búsqueda
 document.getElementById("busqueda-form").addEventListener("submit", function (event) {
     event.preventDefault();
