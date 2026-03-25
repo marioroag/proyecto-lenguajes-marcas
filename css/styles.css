@@ -163,8 +163,14 @@ main {
   margin-bottom: 2.5rem;
 }
 
+.page-hero__subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.861);
+}
+
 .contador {
   margin-top: 1rem;
+  font-size: 1.25rem;
   color: gold;
 }
 
@@ -268,6 +274,8 @@ main {
 
   margin: 0.75rem;
   padding: 0.25rem 1.25rem;
+
+  font-weight: 450;
 
   background-color: #b4de42;
   color: black;
@@ -373,7 +381,7 @@ main {
 }
 
 .detail__encogido {
-  width: 29rem;
+  width: fit-content;
 }
 
 .detail__top {
@@ -404,7 +412,7 @@ main {
 }
 
 .detail img {
-  width: 30rem;
+  width: 25rem;
   height: 25rem;
   border-radius: 1rem;
 }
@@ -593,30 +601,26 @@ main {
 
   padding: 2.5rem;
 
-  border: #a0c735 1px solid;
   border-radius: 1rem;
   box-shadow: 0px 0px 1rem #000000be;
 
   color: aliceblue;
 }
 
-.about__title {
-  margin-bottom: 1rem;
+.about__text {
+  font-size: 1.25rem;
 }
 
-.about_intro {
-  padding: 1rem;
-  background-color: #181a1c;
-  border: 0.1rem solid #bfeb44c6;
-  box-shadow: 0px 0px 0.5rem #b4de42bc;
-  border-radius: 1rem;
-
-  width: 100%;
+.about__title {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.861);
 }
 
 .about__list {
-  padding: 1rem;
+  padding: 1.25rem;
   width: 100%;
+
+  font-size: 1.25rem;
 
   background-color: #181a1c;
   box-shadow: 0px 0px 0.5rem #b4de42bc;
@@ -631,7 +635,7 @@ main {
 }
 
 li {
-  margin-block: 0.75rem;
+  margin-block: 1rem;
 }
 
 .team {
@@ -639,7 +643,7 @@ li {
   flex-direction: column;
   align-items: center;
 
-  padding: 1rem;
+  padding: 3rem 1rem;
   margin-top: 2rem;
 
   width: 100%;
@@ -664,7 +668,6 @@ li {
   gap: 5rem;
   margin: 1rem;
   animation: animacionFlotando 1s infinite alternate linear;
-
 }
 
 .team__member {
@@ -695,10 +698,10 @@ li {
   flex-direction: column;
   gap: 1rem;
 
-  /* border: 0.1rem solid #bfeb44c6; */
+  border: 0.1rem solid #bfeb44c6;
   box-shadow: 0px 0px 0.5rem #070901bc;
 
-  height: 40rem;
+  height: 40.5rem;
 
   border-radius: 2rem;
   background-color: #161916;
@@ -740,6 +743,7 @@ li {
 #error-busqueda {
   color: lightcoral;
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .aleatorio {
@@ -752,7 +756,7 @@ li {
 }
 
 .aleatorio h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .episodios {
@@ -800,18 +804,18 @@ li {
   background-color: #161916;
   color: aliceblue;
 
+  margin-top: 1.25rem;
   padding: 0.75rem;
 }
 
 .site-footer a {
   color: aliceblue;
-  margin: 0 10px;
+  margin: 0 1rem;
   text-decoration: none;
 }
 
 .site-footer a:hover {
   color: #a0c735;
-  margin: 0 10px;
   text-decoration: none;
 }
 

@@ -193,13 +193,9 @@ async function mostrarPersonaje(datos) {
 
     // Episodios
     for (let i = 0; i < datos.episode.length; i++) {
-        console.log(await obtenerEpisodio(datos.episode[i]));
-
         datosEpisodio = await obtenerEpisodio(datos.episode[i])
         episodios += `<li> <strong>${datosEpisodio.episode}</strong> - ${datosEpisodio.name}</li> <br>`;
     }
-
-    console.log(episodios);
 
     contenedorEpisodios.innerHTML = `
             <ul>
@@ -222,7 +218,6 @@ async function obtenerEpisodio(url) {
         const respuesta = await fetch(`${url}`);
 
         if (!respuesta.ok) {
-            console.log("No se encontró el episodio:");
             throw new Error("No se encontró el episodio");
         }
         const datos = await respuesta.json();
