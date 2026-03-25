@@ -129,18 +129,18 @@ main {
   text-decoration: none;
   text-shadow: 1px 1px 10px #161916;
 
-  transition: transform 0.15s ease, background-size 0.8s ease;
+  transition: transform 0.15s ease, background-size 0.6s ease;
 }
 
 .site-nav a:hover {
   box-shadow: 0px 0px 0.5rem #b4de42;
 
-  background-size: 24rem;
+  background-size: 22rem;
   transform: scale(1.05);
 }
 
 .site-nav a:active {
-  background-size: 14rem;
+  background-size: 15rem;
   transform: scale(1);
 }
 
