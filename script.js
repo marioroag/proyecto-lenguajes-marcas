@@ -137,8 +137,6 @@ const parametros = new URLSearchParams(window.location.search);
 const idPersonaje = parametros.get("id");
 const personajeEncontrado = personajes.find((personaje) => personaje.id === idPersonaje);
 
-const parrafoError = document.getElementById("error-busqueda")
-
 if (personajeEncontrado) {
     document.querySelector("#nombre-personaje").textContent = personajeEncontrado.nombre;
     document.querySelector("#imagen-personaje").src = personajeEncontrado.imagen;
@@ -152,20 +150,36 @@ if (personajeEncontrado) {
 
 const apiUrl = "https://rickandmortyapi.com/api/";
 
-// TODO: ARREGLAR Mensaje error funciona al poner id no existente en vs pero no en el campo de busqueda
-// Función para obtener datos de un personaje por su ID
-async function obtenerPersonaje(id) {
+const parrafoError = document.getElementById("error-busqueda")
+
+// Función para obtener datos de un personaje por su ID o nombre
+async function obtenerPersonaje(NombreOID) {
     try {
-        const respuesta = await fetch(`${apiUrl}/character/${id}`);
+        let respuesta;
+        parrafoError.style.display = "none"
+        // Cambia la url dependiendo de si es nombre o id
+        if (isNaN(NombreOID)) {
+            respuesta = await fetch(`${apiUrl}character/?name=${NombreOID}`);
+        } else {
+            respuesta = await fetch(`${apiUrl}character/${NombreOID}`);
+        }
+
         if (!respuesta.ok) {
-            parrafoError.textContent = "No se encontró el personaje:" + error;
             throw new Error("No se encontró el personaje");
         }
+
         const datos = await respuesta.json();
-        mostrarPersonaje(datos);
+
+        // Si es nombre escoge el primer objeto de los que salen
+        if (isNaN(NombreOID)) {
+            mostrarPersonaje(datos.results[0]); // primer resultado
+        } else {
+            mostrarPersonaje(datos);
+        }
 
     } catch (error) {
-        parrafoError.textContent = "Error al obtener el personaje:" + error;
+        parrafoError.style.display = "block"
+        parrafoError.textContent = error
     }
 }
 
@@ -177,30 +191,29 @@ async function mostrarPersonaje(datos) {
     let episodios = "";
     let datosEpisodio;
 
-
     // Episodios
     for (let i = 0; i < datos.episode.length; i++) {
         console.log(await obtenerEpisodio(datos.episode[i]));
 
         datosEpisodio = await obtenerEpisodio(datos.episode[i])
-        episodios += `<li><strong>${datosEpisodio.episode}</strong> - ${datosEpisodio.name}</li><br>`;
+        episodios += `<li> <strong>${datosEpisodio.episode}</strong> - ${datosEpisodio.name}</li> <br>`;
     }
 
     console.log(episodios);
 
     contenedorEpisodios.innerHTML = `
-        <ul>
-            <p>${episodios}</p>
-        </ul>
-    `
+            <ul>
+                <p>${episodios}</p>
+            </ul>
+            `
 
     contenedor.innerHTML = `
-        <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
-        <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
-        <p><strong>Especie:</strong> ${datos.species}</p>
-        <p><strong>Estado:</strong> ${datos.status}</p>
-        <p><strong>Origen:</strong> ${datos.origin.name}</p>
-    `
+            <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
+            <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
+                <p><strong>Especie:</strong> ${datos.species}</p>
+                <p><strong>Estado:</strong> ${datos.status}</p>
+                <p><strong>Origen:</strong> ${datos.origin.name}</p>
+                `
 }
 
 // Función para obtener datos de un episodio por su URL
