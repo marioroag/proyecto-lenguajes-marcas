@@ -169,7 +169,7 @@ async function obtenerPersonaje(nombreOId) {
     }
 }
 
-obtenerPersonaje(1)
+obtenerPersonaje(2)
 
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
@@ -178,10 +178,10 @@ function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
 
     contenedor.innerHTML = `
-        <h2>${datos.name.toUpperCase()}</h2>
-        <img src="${datos.image}" alt="Imagen de ${datos.name}">
-        <p><strong>Especie:</strong> ${datos.species} kg</p>
-        <p><strong>Estado:</strong>${datos.status}</p>
-        <p><strong>Origen:</strong>${datos.origin}</p>
+        <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
+        <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
+        <p><strong>Especie:</strong> ${datos.species}</p>
+        <p><strong>Estado:</strong> ${datos.status}</p>
+        <p><strong>Origen:</strong> ${datos.origin.name}</p>
     `
 }
