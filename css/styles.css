@@ -746,6 +746,8 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-color: #161916;
   margin-top: 1rem;
 }
 
@@ -755,9 +757,8 @@ li {
 
 .episodios {
   margin-left: 2rem;
-  width: 30rem;
-  overflow: auto;
-  height: 39.5rem;
+  padding-inline: 1rem;
+  overflow-x: auto;
 }
 
 .episodios h2 {
@@ -771,6 +772,7 @@ li {
 .buscador {
   display: flex;
   flex-direction: row;
+  height: 40rem;
 }
 
 .container__busqueda {
