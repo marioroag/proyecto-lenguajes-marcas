@@ -169,10 +169,6 @@ async function obtenerPersonaje(id) {
     }
 }
 
-// Personaje que se muestra por defecto
-obtenerPersonaje(18)
-
-// TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del personaje en la página
 async function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
@@ -187,7 +183,7 @@ async function mostrarPersonaje(datos) {
         console.log(await obtenerEpisodio(datos.episode[i]));
 
         datosEpisodio = await obtenerEpisodio(datos.episode[i])
-        episodios += datosEpisodio.name + "<br>";
+        episodios += `<li>${datosEpisodio.episode} - ${datosEpisodio.name}</li><br>`;
     }
 
     console.log(episodios);
@@ -239,3 +235,6 @@ document.getElementById("btn-aleatorio").addEventListener("click", function (eve
     const idAleatorio = Math.floor(Math.random() * 826) + 1;
     obtenerPersonaje(idAleatorio)
 });
+
+// Personaje que se muestra por defecto
+obtenerPersonaje(1)
