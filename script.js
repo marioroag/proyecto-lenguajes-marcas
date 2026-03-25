@@ -147,3 +147,23 @@ if (personajeEncontrado) {
     document.querySelector("#descripcion-personaje").textContent = personajeEncontrado.descripcion;
 }
 
+// [ API ]
+
+const apiUrl = "https://rickandmortyapi.com/api/";
+
+// Función para obtener datos de un personaje por su ID
+async function obtenerPersonaje(nombreOId) {
+    try {
+        const respuesta = await fetch(`${apiUrl}/character/${nombreOId}`);
+        if (!respuesta.ok) {
+            throw new Error("No se encontró el personaje");
+        }
+        const datos = await respuesta.json();
+        console.log(datos);
+
+    } catch (error) {
+        console.error("Error al obtener el persponaje:", error);
+    }
+}
+
+obtenerPersonaje(2)
