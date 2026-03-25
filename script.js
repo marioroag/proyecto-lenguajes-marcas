@@ -197,3 +197,9 @@ document.getElementById("busqueda-form").addEventListener("submit", function (ev
         obtenerPersonaje(input);
     }
 });
+
+const totalPersonajes = 826;
+document.getElementById("btn-aleatorio").addEventListener("click", function (event) {
+    const idAleatorio = Math.floor(Math.random() * 826) + 1;
+    obtenerPersonaje(idAleatorio)
+});
