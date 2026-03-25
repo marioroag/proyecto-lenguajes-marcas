@@ -27,13 +27,17 @@
         <div class="container container__encogido">
             <section class="busqueda">
                 <h2>Buscar personaje por nombre o ID</h2>
-                <input type="text" id="busqueda-personaje" placeholder="Escribe un nombre o un id">
-                <div class="detail__info" id="personaje-info"></div>
+                <form id="busqueda-form">
 
-                <button id="btn-buscar">Buscar</button>
+                    <input type="text" id="personaje-input" placeholder="Escribe un nombre o un id">
+                    <button id="btn-buscar">Buscar</button>
+                </form>
 
                 <div id="resultado-busqueda"></div>
-                <p id="error-busqueda"></p>
+                <div class="detail__info" id="personaje-info">
+                    <p id="error-busqueda"></p>
+
+                </div>
             </section>
 
             <section class="aleatorio">

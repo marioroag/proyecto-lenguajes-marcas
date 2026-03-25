@@ -138,6 +138,8 @@ const parametros = new URLSearchParams(window.location.search);
 const idPersonaje = parametros.get("id");
 const personajeEncontrado = personajes.find((personaje) => personaje.id === idPersonaje);
 
+const parrafoError = document.getElementById("error-busqueda")
+
 if (personajeEncontrado) {
     document.querySelector("#nombre-personaje").textContent = personajeEncontrado.nombre;
     document.querySelector("#imagen-personaje").src = personajeEncontrado.imagen;
@@ -163,14 +165,12 @@ async function obtenerPersonaje(nombreOId) {
         console.log(datos);
         mostrarPersonaje(datos);
 
-
     } catch (error) {
-        console.error("Error al obtener el personaje:", error);
+        parrafoError.textContent = "Error al obtener el personaje:", error;
     }
 }
 
-obtenerPersonaje(2)
-
+obtenerPersonaje(1)
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del Pokémon en la página
@@ -185,3 +185,12 @@ function mostrarPersonaje(datos) {
         <p><strong>Origen:</strong> ${datos.origin.name}</p>
     `
 }
+
+// Manejo del formulario de búsqueda
+document.getElementById("busqueda-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const input = document.getElementById("personaje-input").value.trim().toLowerCase();
+    if (input) {
+        obtenerPersonaje(input);
+    }
+});
