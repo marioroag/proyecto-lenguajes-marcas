@@ -110,7 +110,7 @@ main {
 
   padding: 1rem 2rem;
   margin-inline: 1.5rem;
-  width: 12rem;
+  width: 13rem;
 
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -371,7 +371,6 @@ main {
   padding: 3rem 2rem;
 }
 
-/*TODO: ARREGLAR*/
 .detail__encogido {
   width: 29rem;
 }
@@ -451,11 +450,13 @@ main {
   transform: translateY(0);
 }
 
-#boton_esconder {
+.boton__largo {
   display: flex;
   justify-content: center;
 
   padding: 10px 18px;
+
+  width: 100%;
 
   background-color: #bfeb44c6;
   color: black;
@@ -469,7 +470,7 @@ main {
   transition: background-color 0.2s ease, transform 0.25s ease;
 }
 
-#boton_esconder:hover {
+.boton__largo:hover {
   background-color: #c2ee48;
   box-shadow: 0px 0px 0.5rem #a0c735;
 
@@ -478,7 +479,7 @@ main {
   font-weight: 600;
 }
 
-#boton_esconder:active {
+.boton__largo:active {
   transform: translateY(2px);
 }
 

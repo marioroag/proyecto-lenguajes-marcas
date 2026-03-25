@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar personajes | R&M Wiki</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="media/logo.png">
+            <span class="brand__name">R&M Wiki</span>
+        </a>
+
+        <nav class="site-nav">
+            <a class="site-nav__link" href="index.html">Inicio</a>
+            <a class="site-nav__link" href="sobre_nosotros.html">Sobre nosotros</a>
+            <a class="site-nav__link" href="buscar_personaje.html">Buscar personajes</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="detail busqueda">
+                <h2>Buscar personaje por nombre o id</h2>
+                <input type="text" id="busqueda-personaje" placeholder="Escribe un nombre o un id">
+                <button id="btn-buscar">Buscar</button>
+
+                <div id="resultado-busqueda"></div>
+                <p id="error-busqueda"></p>
+            </section>
+
+            <section class="aleatorio">
+                <h2>Personaje aleatorio</h2>
+                <button class="boton__largo" id="btn-aleatorio">Mostrar personaje aleatorio</button>
+
+                <div id="resultado-aleatorio"></div>
+                <p id="error-aleatorio"></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__links">
+            <a href="#" class="site-footer__link">Instagram</a>
+            <a href="#" class="site-footer__link">X</a>
+            <a href="#" class="site-footer__link">YouTube</a>
+        </div>
+        <p class="site-footer__text">Contacto: contacto@rmwiki.com</p>
+    </footer>
+</body>
+
+</html>
