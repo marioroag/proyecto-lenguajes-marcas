@@ -179,6 +179,15 @@ obtenerPersonaje(1)
 // Función para mostrar los datos del Pokémon en la página
 function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
+    const contenedorEpisodios = document.getElementById("resultado-busqueda-episodios");
+    let episodios = "";
+
+    // Episodios
+    for (const episodio of datos.episode) {
+        episodios += episodio.name + " | " + episodio.air_date + "\n"
+    }
+
+    console.log(episodios);
 
     contenedor.innerHTML = `
         <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
@@ -187,6 +196,16 @@ function mostrarPersonaje(datos) {
         <p><strong>Estado:</strong> ${datos.status}</p>
         <p><strong>Origen:</strong> ${datos.origin.name}</p>
     `
+
+    contenedorEpisodios.innerHTML = `
+        <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
+        <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
+        <p><strong>Especie:</strong> ${datos.species}</p>
+        <p><strong>Estado:</strong> ${datos.status}</p>
+        <p><strong>Origen:</strong> ${datos.origin.name}</p>
+    `
+
+
 }
 
 // Manejo del formulario de búsqueda

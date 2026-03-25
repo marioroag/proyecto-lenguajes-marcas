@@ -753,6 +753,23 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.episodios {
+  margin-left: 2rem;
+  width: 30rem;
+  height: 100%;
+}
+
+.buscador {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__busqueda {
+  display: flex;
+  flex-direction: row;
+}
+
+
 /* =========================
     FOOTER
    ========================= */

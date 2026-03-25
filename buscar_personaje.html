@@ -24,29 +24,35 @@
     </header>
 
     <main>
-        <div class="container container__encogido">
-            <section class="busqueda">
-                <h2>Buscar personaje por nombre o ID</h2>
-                <form class="form" id="busqueda-form">
-                    <input type="text" id="personaje-input" placeholder="Escribe un nombre o un id">
-                    <button class="boton__largo" id="btn-buscar">Buscar</button>
-                </form>
+        <div class="container container__busqueda container__encogido">
+            <div class="buscador">
+                <section class="busqueda">
+                    <h2>Buscar personaje por nombre o ID</h2>
+                    <form class="form" id="busqueda-form">
+                        <input type="text" id="personaje-input" placeholder="Escribe un nombre o un id">
+                        <button class="boton__largo" id="btn-buscar">Buscar</button>
+                    </form>
 
-                <div class="busqueda__info" id="personaje-info">
-                    <div id="resultado-busqueda">
+                    <div class="busqueda__info" id="personaje-info">
                         <p id="error-busqueda"></p>
-
+                        <div id="resultado-busqueda"></div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <section class="aleatorio">
+                    <h2>Personaje aleatorio</h2>
+                    <button class="boton__largo" id="btn-aleatorio">Mostrar personaje aleatorio</button>
 
-            <section class="aleatorio">
-                <h2>Personaje aleatorio</h2>
-                <button class="boton__largo" id="btn-aleatorio">Mostrar personaje aleatorio</button>
+                    <div id="resultado-aleatorio"></div>
+                    <p id="error-aleatorio"></p>
+                </section>
+            </div>
 
-                <div id="resultado-aleatorio"></div>
-                <p id="error-aleatorio"></p>
-            </section>
+            <div class="busqueda episodios">
+                <section class="episodios">
+                    <h2>Apariciones: </h2>
+                    <div id="resultado-busqueda-episodios"></div>
+                </section>
+            </div>
         </div>
     </main>
 
