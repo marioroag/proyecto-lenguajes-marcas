@@ -741,6 +741,17 @@ li {
   color: lightcoral;
 }
 
+.aleatorio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.aleatorio h2 {
+  margin-bottom: 0.5rem;
+}
+
 /* =========================
     FOOTER
    ========================= */
