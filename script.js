@@ -172,7 +172,8 @@ async function obtenerPersonaje(id) {
     }
 }
 
-obtenerPersonaje(223213323)
+// Personaje que se muestra por defecto
+obtenerPersonaje(1)
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del Pokémon en la página
