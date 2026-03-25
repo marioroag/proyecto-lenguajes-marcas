@@ -756,13 +756,10 @@ li {
 }
 
 .episodios {
+  min-width: 27rem;
   margin-left: 2rem;
   padding-inline: 1rem;
   overflow-x: auto;
-}
-
-.episodios h2 {
-  margin-bottom: 1.5rem;
 }
 
 .episodios li {
@@ -778,6 +775,18 @@ li {
 .container__busqueda {
   display: flex;
   flex-direction: column;
+  max-width: 65rem;
+}
+
+.episodios h2 {
+  position: absolute;
+  margin-bottom: 1.5rem;
+  background-color: #161916b1;
+  box-shadow: 0px 0px 2rem #161916;
+}
+
+#resultado-episodios {
+  margin-top: 3.50rem;
 }
 
 
