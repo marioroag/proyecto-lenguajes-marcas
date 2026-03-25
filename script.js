@@ -181,14 +181,13 @@ async function mostrarPersonaje(datos) {
     let episodios = "";
     let datosEpisodio;
 
-    console.log(datos.episode);
 
     // Episodios
     for (let i = 0; i < datos.episode.length; i++) {
         console.log(await obtenerEpisodio(datos.episode[i]));
 
         datosEpisodio = await obtenerEpisodio(datos.episode[i])
-        episodios += datosEpisodio + "\n";
+        episodios += datosEpisodio.name + "<br>";
     }
 
     console.log(episodios);
