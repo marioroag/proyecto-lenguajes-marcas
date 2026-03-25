@@ -170,33 +170,32 @@ async function obtenerPersonaje(id) {
 }
 
 // Personaje que se muestra por defecto
-obtenerPersonaje(200)
+obtenerPersonaje(18)
 
 // TODO: Si da tiempo, mostrar episodios en una lista desplegable
 // Función para mostrar los datos del personaje en la página
-function mostrarPersonaje(datos) {
+async function mostrarPersonaje(datos) {
     const contenedor = document.getElementById("personaje-info");
     const contenedorEpisodios = document.getElementById("resultado-episodios");
 
     let episodios = "";
+    let datosEpisodio;
+
     console.log(datos.episode);
 
     // Episodios
     for (let i = 0; i < datos.episode.length; i++) {
-        episodios += obtenerEpisodio(datos.episode[i]);
+        console.log(await obtenerEpisodio(datos.episode[i]));
+
+        datosEpisodio = await obtenerEpisodio(datos.episode[i])
+        episodios += datosEpisodio + "\n";
     }
 
-    // for (const episodio of datos.episode) {
-    //     const idEpisodio = episodio[texto.length - 1];
-    //     console.log(idEpisodio);
-    //     console.log(episodio);
-
-    // }
-
     console.log(episodios);
+
     contenedorEpisodios.innerHTML = `
         <ul>
-            <p>HOLA</p>
+            <p>${episodios}</p>
         </ul>
     `
 
@@ -209,7 +208,7 @@ function mostrarPersonaje(datos) {
     `
 }
 
-// Función para obtener datos de un episodio por su ID
+// Función para obtener datos de un episodio por su URL
 async function obtenerEpisodio(url) {
     try {
         const respuesta = await fetch(`${url}`);
@@ -219,6 +218,7 @@ async function obtenerEpisodio(url) {
             throw new Error("No se encontró el episodio");
         }
         const datos = await respuesta.json();
+        return datos
 
     } catch (error) {
         console.log("Error no se encontró el episodio " + error);
