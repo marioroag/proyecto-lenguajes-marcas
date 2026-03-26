@@ -1,5 +1,5 @@
 // [ Constantes ]
-const botonesDetalle = document.querySelectorAll(".btn-detalle");
+const botonesDetalle = document.querySelectorAll(".btn__detalle");
 const botonesFavoritos = document.querySelectorAll(".btn-favo");
 const tarjetasPersonaje = document.querySelectorAll(".card");
 const contadorFavoritos = document.getElementById("contador-favoritos")
@@ -52,7 +52,6 @@ function engancharClickBoton(boton) {
 }
 
 function alternarFavorito(tarjetaSeleccionada, boton) {
-
     if (tarjetaSeleccionada) {
         if (!tarjetaSeleccionada.classList.contains("tarjeta-favorito")) {
             tarjetaSeleccionada.classList.add("tarjeta-favorito")
