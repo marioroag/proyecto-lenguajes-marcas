@@ -193,11 +193,11 @@ main {
   color: aliceblue;
 
   border: 0.15rem solid #bfeb44c6;
+  border-radius: 1rem;
   box-shadow: 0px 0px 0.75rem #000000e8;
 
   width: 16rem;
-  border-radius: 1rem;
-  height: fit-content;
+  height: 27.5rem;
 
   transition: transform 0.3s ease;
 }
@@ -258,7 +258,7 @@ main {
   background-color: #c2ee48;
   box-shadow: 0px 0px 0.5rem #a0c735;
 
-  transform: translateY(-3px) scale(1.1);
+  transform: translateY(-3px) scale(1.05);
 
   font-weight: 600;
 }
@@ -306,22 +306,6 @@ main {
 
 }
 
-.btn-favo {
-  padding: 0.75rem;
-
-  background: url("../media/fav-icon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  text-decoration: none;
-  font-weight: 500;
-
-  border: none;
-
-  background-size: cover;
-}
-
 @keyframes animacionFlotando {
   to {
     transform: translateY(-5px);
@@ -342,6 +326,11 @@ main {
   }
 }
 
+.tarjeta-favorito:has(.btn:hover) {
+  border-color: gold;
+  box-shadow: 0px 0px 0.5rem gold;
+}
+
 .tarjeta-favorito {
   border: 0.15rem solid gold;
   box-shadow: 0px 0px 0.25rem gold;
@@ -355,13 +344,29 @@ main {
   background-color: gold;
 }
 
+.btn-favo {
+  padding: 0.75rem;
+
+  background: url("../media/fav-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  border: none;
+
+  background-size: cover;
+}
+
 .btn__detalle {
   transition: all 0.15s;
 }
 
 .btn__detalle:hover {
-  font-size: larger;
-  transform: translateY(0px) scale(1.02);
+  font-size: large;
+  transform: translateY(-3px) scale(1.01);
 }
 
 /* =========================
