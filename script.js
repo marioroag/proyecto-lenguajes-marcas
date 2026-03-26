@@ -7,6 +7,9 @@ const botonEsconder = document.getElementById("boton_esconder")
 const infoPersonaje = document.querySelector(".detail__info")
 const detail = document.querySelector(".detail")
 const container = document.querySelector(".container")
+const botonAleatorio = document.getElementById("btn-aleatorio")
+const busquedaPersonaje = document.getElementById("busqueda-form")
+const parrafoError = document.getElementById("error-busqueda")
 
 
 // [ Asigna eventos ]
@@ -147,102 +150,109 @@ if (personajeEncontrado) {
 }
 
 // [ API ]
-
 const apiUrl = "https://rickandmortyapi.com/api/";
 
-const parrafoError = document.getElementById("error-busqueda")
+// Solo se hace si estamos en la pagina de buscar personajes (donde está el formulario)
+if (busquedaPersonaje) {
+    // Personaje que se muestra por defecto
+    obtenerPersonaje(1)
 
-// Función para obtener datos de un personaje por su ID o nombre
-async function obtenerPersonaje(NombreOID) {
-    try {
-        let respuesta;
-        parrafoError.style.display = "none"
-        // Cambia la url dependiendo de si es nombre o id
-        if (isNaN(NombreOID)) {
-            respuesta = await fetch(`${apiUrl}character/?name=${NombreOID}`);
-        } else {
-            respuesta = await fetch(`${apiUrl}character/${NombreOID}`);
+    // Función para obtener datos de un personaje por su ID o nombre
+    async function obtenerPersonaje(NombreOID) {
+        try {
+            let respuesta;
+            parrafoError.style.display = "none"
+            // Cambia la url dependiendo de si es nombre o id
+            if (isNaN(NombreOID)) {
+                respuesta = await fetch(`${apiUrl}character/?name=${NombreOID}`);
+            } else {
+                respuesta = await fetch(`${apiUrl}character/${NombreOID}`);
+            }
+
+            if (!respuesta.ok) {
+                throw new Error("No se encontró el personaje");
+            }
+
+            const datos = await respuesta.json();
+
+            // Si es nombre escoge el primer objeto de los que salen
+            if (isNaN(NombreOID)) {
+                mostrarPersonaje(datos.results[0]); // primer resultado
+            } else {
+                mostrarPersonaje(datos);
+            }
+
+        } catch (error) {
+            parrafoError.style.display = "block"
+            parrafoError.textContent = error
         }
-
-        if (!respuesta.ok) {
-            throw new Error("No se encontró el personaje");
-        }
-
-        const datos = await respuesta.json();
-
-        // Si es nombre escoge el primer objeto de los que salen
-        if (isNaN(NombreOID)) {
-            mostrarPersonaje(datos.results[0]); // primer resultado
-        } else {
-            mostrarPersonaje(datos);
-        }
-
-    } catch (error) {
-        parrafoError.style.display = "block"
-        parrafoError.textContent = error
-    }
-}
-
-// Función para mostrar los datos del personaje en la página
-async function mostrarPersonaje(datos) {
-    const contenedor = document.getElementById("personaje-info");
-    const contenedorEpisodios = document.getElementById("resultado-episodios");
-
-    let episodios = "";
-    let datosEpisodio;
-
-    // Episodios
-    for (let i = 0; i < datos.episode.length; i++) {
-        datosEpisodio = await obtenerEpisodio(datos.episode[i])
-        episodios += `<li> <strong>${datosEpisodio.episode}</strong> - ${datosEpisodio.name}</li> <br>`;
     }
 
-    contenedorEpisodios.innerHTML = `
+    // Función para mostrar los datos del personaje en la página
+    async function mostrarPersonaje(datos) {
+        const contenedor = document.getElementById("personaje-info");
+        const contenedorEpisodios = document.getElementById("resultado-episodios");
+
+        let episodios = "";
+        let datosEpisodio;
+
+        // Episodios
+        for (let i = 0; i < datos.episode.length; i++) {
+            datosEpisodio = await obtenerEpisodio(datos.episode[i])
+            episodios += `<li> <strong>${datosEpisodio.episode}</strong> - ${datosEpisodio.name}</li> <br>`;
+        }
+
+        contenedorEpisodios.innerHTML = `
             <ul>
                 <p>${episodios}</p>
             </ul>
             `
 
-    contenedor.innerHTML = `
+        contenedor.innerHTML = `
             <h2 class="busqueda__titulo">${datos.name.toUpperCase()}</h2>
             <img class="busqueda__imagen" src="${datos.image}" alt="Imagen de ${datos.name}">
                 <p><strong>Especie:</strong> ${datos.species}</p>
                 <p><strong>Estado:</strong> ${datos.status}</p>
                 <p><strong>Origen:</strong> ${datos.origin.name}</p>
                 `
-}
+    }
 
-// Función para obtener datos de un episodio por su URL
-async function obtenerEpisodio(url) {
-    try {
-        const respuesta = await fetch(`${url}`);
+    // Función para obtener datos de un episodio por su URL
+    async function obtenerEpisodio(url) {
+        try {
+            const respuesta = await fetch(`${url}`);
 
-        if (!respuesta.ok) {
-            throw new Error("No se encontró el episodio");
+            if (!respuesta.ok) {
+                throw new Error("No se encontró el episodio");
+            }
+            const datos = await respuesta.json();
+            return datos
+
+        } catch (error) {
+            console.log("Error no se encontró el episodio " + error);
+
         }
-        const datos = await respuesta.json();
-        return datos
+    }
 
-    } catch (error) {
-        console.log("Error no se encontró el episodio " + error);
+    // Manejo del formulario de búsqueda
+    if (busquedaPersonaje) {
+        busquedaPersonaje.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const input = document.getElementById("personaje-input").value.trim().toLowerCase();
+            if (input) {
+                obtenerPersonaje(input);
+            }
+        });
+
+    }
+
+    const totalPersonajes = 826;
+    if (botonAleatorio) {
+        botonAleatorio.addEventListener("click", function (event) {
+            const idAleatorio = Math.floor(Math.random() * 826) + 1;
+            obtenerPersonaje(idAleatorio)
+        });
 
     }
 }
 
-// Manejo del formulario de búsqueda
-document.getElementById("busqueda-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const input = document.getElementById("personaje-input").value.trim().toLowerCase();
-    if (input) {
-        obtenerPersonaje(input);
-    }
-});
-
-const totalPersonajes = 826;
-document.getElementById("btn-aleatorio").addEventListener("click", function (event) {
-    const idAleatorio = Math.floor(Math.random() * 826) + 1;
-    obtenerPersonaje(idAleatorio)
-});
-
-// Personaje que se muestra por defecto
-obtenerPersonaje(1)
