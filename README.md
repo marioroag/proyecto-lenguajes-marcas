@@ -28,7 +28,7 @@ Para verlo en vivo visita: [rickymortywikimra.netlify.app](rickymortywikimra.net
 ## Tecnologías
 
 - **HTML5** semántico
-- **CSS3**: Flexbox, metodología BEM para los nombres de clases y Google Fonts
+- **CSS3**: Flexbox y Google Fonts
 - **JavaScript** vanilla: manipulación del DOM, eventos, `URLSearchParams` y Fetch API
 - **[Rick and Morty API](https://rickandmortyapi.com/)** como fuente de datos externa
 
