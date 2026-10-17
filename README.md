@@ -4,6 +4,9 @@ Wiki web sobre el universo de *Rick and Morty*, hecha con HTML, CSS y JavaScript
 
 Proyecto de la asignatura de Lenguajes de Marcas (2.º trimestre, 1.º DAW) en STEM Granada.
 
+Para verlo en vivo visita: [rickymortywikimra.netlify.app](rickymortywikimra.netlify.app).
+
+
 ## Páginas
 
 | Página | Qué hace |
