@@ -48,7 +48,7 @@ Para verlo en vivo visita: [rickymortywikimra.netlify.app](rickymortywikimra.net
 
 ## Cómo verlo
 
-No necesita instalación. Abre `index.html` en el navegador, o lánzalo con un servidor local (por ejemplo, la extensión *Live Server* de VS Code). El buscador necesita conexión a internet para consultar la API.
+No necesita instalación. Abre `index.html` en el navegador, o visita [rickymortywikimra.netlify.app](rickymortywikimra.netlify.app). El buscador necesita conexión a internet para consultar la API.
 
 ## Aviso
 
